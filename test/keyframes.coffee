@@ -40,3 +40,10 @@ test "compile @keyframes with selector list", ->
 			to {}
 		}
 	'''
+
+test "compile prefixed @keyframes", ->
+	assert.compileTo '''
+		@-webkit-keyframes name {}
+	''', '''
+		@-webkit-keyframes name {}
+	'''
