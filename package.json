@@ -1,0 +1,32 @@
+{
+  "name": "roole-compiler",
+  "version": "0.1.0",
+  "description": "Compiler for the Roole language",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --bail --compilers coffee:coffee-script --ui qunit test/*.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/curvedmark/roole-compiler.git"
+  },
+  "keywords": [],
+  "author": "Glen Huang <curvedmark@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/curvedmark/roole-compiler/issues"
+  },
+  "dependencies": {
+    "tree-transformer": "*",
+    "roole-node": "*"
+  },
+  "devDependencies": {
+    "mocha": "1.x",
+    "roole-parser": "*",
+    "coffee-script": "1.x"
+  }
+}
