@@ -167,3 +167,20 @@ test "preserve comment before @import", ->
 		/* foo */
 		@import url(http://exmaple.com/);
 	'''
+
+test "discard comment at the end of ruleset", ->
+	assert.compileTo '''
+		body {
+			/* foo */
+		}
+	''', '''
+		body {}
+	'''
+
+test "discard comment at the end of file", ->
+	assert.compileTo '''
+		body {}
+		/* foo */
+	''', '''
+		body {}
+	'''
