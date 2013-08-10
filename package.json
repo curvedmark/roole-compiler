@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --bail --compilers coffee:coffee-script --ui qunit test/*.coffee"
+    "test": "mocha --bail --compilers coffee:coffee-script --ui qunit test/index.js"
   },
   "repository": {
     "type": "git",
