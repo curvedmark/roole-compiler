@@ -1,6 +1,8 @@
 assert = require './assert'
 
-test "compile number", ->
+suite 'value'
+
+test "number", ->
 	assert.compileTo '''
 		body { margin: 0 }
 	''', '''
@@ -9,7 +11,7 @@ test "compile number", ->
 		}
 	'''
 
-test "compile fraction number", ->
+test "fraction number", ->
 	assert.compileTo '''
 		body { margin: 0.2 }
 	''', '''
@@ -18,7 +20,7 @@ test "compile fraction number", ->
 		}
 	'''
 
-test "compile fraction number without whole part", ->
+test "fraction number without whole part", ->
 	assert.compileTo '''
 		body { margin: .2 }
 	''', '''
@@ -27,7 +29,7 @@ test "compile fraction number without whole part", ->
 		}
 	'''
 
-test "compile fraction number that are to be rounded", ->
+test "fraction number that are to be rounded", ->
 	assert.compileTo '''
 		body { margin: 0.6666 }
 	''', '''
@@ -36,7 +38,7 @@ test "compile fraction number that are to be rounded", ->
 		}
 	'''
 
-test "compile percentage", ->
+test "percentage", ->
 	assert.compileTo '''
 		body { margin: 0% }
 	''', '''
@@ -45,7 +47,7 @@ test "compile percentage", ->
 		}
 	'''
 
-test "compile dimension", ->
+test "dimension", ->
 	assert.compileTo '''
 		body { margin: .2em }
 	''', '''
@@ -54,7 +56,7 @@ test "compile dimension", ->
 		}
 	'''
 
-test "compile single-quoted string", ->
+test "single-quoted string", ->
 	assert.compileTo '''
 		body {
 			content: 'abc';
@@ -65,7 +67,7 @@ test "compile single-quoted string", ->
 		}
 	'''
 
-test "compile single-quoted string with escape", ->
+test "single-quoted string with escape", ->
 	assert.compileTo '''
 		body { content: 'ab\\'c' }
 	''', '''
@@ -74,7 +76,7 @@ test "compile single-quoted string with escape", ->
 		}
 	'''
 
-test "compile double-quoted string", ->
+test "double-quoted string", ->
 	assert.compileTo '''
 		body {
 			content: "abc";
@@ -85,7 +87,7 @@ test "compile double-quoted string", ->
 		}
 	'''
 
-test "compile double-quoted string with escape", ->
+test "double-quoted string with escape", ->
 	assert.compileTo '''
 		body {
 			content: "abc\\"";
@@ -96,7 +98,7 @@ test "compile double-quoted string with escape", ->
 		}
 	'''
 
-test "compile double-quoted string with escape", ->
+test "double-quoted string with escape", ->
 	assert.compileTo '''
 		body {
 			content: "abc\\"";
@@ -107,7 +109,7 @@ test "compile double-quoted string with escape", ->
 		}
 	'''
 
-test "compile color", ->
+test "color", ->
 	assert.compileTo '''
 		body {
 			content: #ff1122;
@@ -118,7 +120,7 @@ test "compile color", ->
 		}
 	'''
 
-test "compile null", ->
+test "null", ->
 	assert.compileTo '''
 		body {
 			content: null;
@@ -151,7 +153,7 @@ test "compilte quoted url", ->
 		}
 	'''
 
-test "compile list", ->
+test "list", ->
 	assert.compileTo '''
 		body {
 			font-family: foo,bar,baz;
@@ -162,7 +164,7 @@ test "compile list", ->
 		}
 	'''
 
-test "compile list separated by slashes", ->
+test "list separated by slashes", ->
 	assert.compileTo '''
 		body {
 			font: 12px/1.25;
@@ -173,7 +175,7 @@ test "compile list separated by slashes", ->
 		}
 	'''
 
-test "compile range", ->
+test "range", ->
 	assert.compileTo '''
 		body {
 			margin: 1px..3px;
@@ -184,7 +186,7 @@ test "compile range", ->
 		}
 	'''
 
-test "compile range with different unit", ->
+test "range with different unit", ->
 	assert.compileTo '''
 		body {
 			margin: 1..3px;
@@ -195,7 +197,7 @@ test "compile range with different unit", ->
 		}
 	'''
 
-test "compile call", ->
+test "call", ->
 	assert.compileTo '''
 		body {
 			content: attr(attr);
@@ -206,7 +208,7 @@ test "compile call", ->
 		}
 	'''
 
-test "compile call with multiple arguments", ->
+test "call with multiple arguments", ->
 	assert.compileTo '''
 		body {
 			background: linear-gradient(#000000, #ffffff);

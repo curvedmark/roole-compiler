@@ -1,5 +1,7 @@
 assert = require './assert'
 
+suite 'comment'
+
 test "ignore single-line comment", ->
 	assert.compileTo '''
 		// foo
