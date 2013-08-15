@@ -186,28 +186,6 @@ test "list separated by slashes", ->
 		}
 	'''
 
-test "range", ->
-	assert.compileTo '''
-		body {
-			margin: 1px..3px;
-		}
-	''', '''
-		body {
-			margin: 1px 2px 3px;
-		}
-	'''
-
-test "range with different unit", ->
-	assert.compileTo '''
-		body {
-			margin: 1..3px;
-		}
-	''', '''
-		body {
-			margin: 1 2 3;
-		}
-	'''
-
 test "call", ->
 	assert.compileTo '''
 		body {
