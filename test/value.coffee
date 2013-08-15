@@ -156,6 +156,17 @@ test "compilte quoted url", ->
 test "list", ->
 	assert.compileTo '''
 		body {
+			font-family: foo bar baz;
+		}
+	''', '''
+		body {
+			font-family: foo bar baz;
+		}
+	'''
+
+test "list seperated by commas", ->
+	assert.compileTo '''
+		body {
 			font-family: foo,bar,baz;
 		}
 	''', '''
