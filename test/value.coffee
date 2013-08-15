@@ -153,7 +153,7 @@ test "compilte quoted url", ->
 		}
 	'''
 
-test "list", ->
+test "space-separated list", ->
 	assert.compileTo '''
 		body {
 			font-family: foo bar baz;
@@ -164,7 +164,7 @@ test "list", ->
 		}
 	'''
 
-test "list seperated by commas", ->
+test "comma-separated list", ->
 	assert.compileTo '''
 		body {
 			font-family: foo,bar,baz;
@@ -172,6 +172,28 @@ test "list seperated by commas", ->
 	''', '''
 		body {
 			font-family: foo, bar, baz;
+		}
+	'''
+
+test "slash-separated list", ->
+	assert.compileTo '''
+		body {
+			font: 14px/1.2;
+		}
+	''', '''
+		body {
+			font: 14px/1.2;
+		}
+	'''
+
+test "mix-separated list", ->
+	assert.compileTo '''
+		body {
+			font: normal 12px/1.25 font1, font2;
+		}
+	''', '''
+		body {
+			font: normal 12px/1.25 font1, font2;
 		}
 	'''
 
