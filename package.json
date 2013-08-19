@@ -21,7 +21,7 @@
     "url": "https://github.com/curvedmark/roole-compiler/issues"
   },
   "dependencies": {
-    "tree-transformer": "*",
+    "tree-transformer": "1.x",
     "roole-node": "*"
   },
   "devDependencies": {
