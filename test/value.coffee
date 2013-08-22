@@ -208,6 +208,61 @@ test "list separated by slashes", ->
 		}
 	'''
 
+test "square bracket list", ->
+	assert.compileTo '''
+		body {
+			content: [1, 2];
+		}
+	''', '''
+		body {
+			content: 1, 2;
+		}
+	'''
+
+test "square bracket list containing only one item", ->
+	assert.compileTo '''
+		body {
+			content: [1];
+		}
+	''', '''
+		body {
+			content: 1;
+		}
+	'''
+
+test "empty list", ->
+	assert.compileTo '''
+		body {
+			content: [];
+		}
+	''', '''
+		body {
+			content: ;
+		}
+	'''
+
+test "square bracket list with mixed separators", ->
+	assert.compileTo '''
+		body {
+			content: [1, 2 3 4/5];
+		}
+	''', '''
+		body {
+			content: 1, 2 3 4/5;
+		}
+	'''
+
+test "nested lists", ->
+	assert.compileTo '''
+		body {
+			content: 1, [[1 2, [1/3]]];
+		}
+	''', '''
+		body {
+			content: 1, 1 2, 1/3;
+		}
+	'''
+
 test "call", ->
 	assert.compileTo '''
 		body {
