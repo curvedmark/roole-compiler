@@ -229,3 +229,25 @@ test "call with multiple arguments", ->
 			background: linear-gradient(#000000, #ffffff);
 		}
 	'''
+
+test "calc()", ->
+	assert.compileTo '''
+		body {
+			content: calc((1 + 2) * 3);
+		}
+	''', '''
+		body {
+			content: calc((1 + 2) * 3);
+		}
+	'''
+
+test "calc() complex expression", ->
+	assert.compileTo '''
+		a {
+			content: calc(50% + 10% + calc(20px + 20px) / (3 + 2) * 5);
+		}
+	''', '''
+		a {
+			content: calc(50% + 10% + calc(20px + 20px) / (3 + 2) * 5);
+		}
+	'''
