@@ -237,7 +237,7 @@ test "empty list", ->
 		}
 	''', '''
 		body {
-			content: ;
+			content: [];
 		}
 	'''
 
