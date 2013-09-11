@@ -31,10 +31,10 @@ test "fraction number without whole part", ->
 
 test "fraction number that are to be rounded", ->
 	assert.compileTo '''
-		body { margin: 0.6666 }
+		body { margin: 0.6666666 }
 	''', '''
 		body {
-			margin: 0.667;
+			margin: 0.66667;
 		}
 	'''
 
