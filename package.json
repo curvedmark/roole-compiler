@@ -1,6 +1,6 @@
 {
   "name": "roole-compiler",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Compiler for the Roole language",
   "main": "lib/index.js",
   "directories": {
