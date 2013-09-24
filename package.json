@@ -14,7 +14,10 @@
     "type": "git",
     "url": "git://github.com/curvedmark/roole-compiler.git"
   },
-  "keywords": [],
+  "keywords": [
+    "roole",
+    "compiler"
+  ],
   "author": "Glen Huang <curvedmark@gmail.com>",
   "license": "MIT",
   "bugs": {
