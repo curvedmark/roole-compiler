@@ -132,6 +132,5 @@ test "selector list", ->
 	assert.compileTo '''
 		body,div {}
 	''', '''
-		body,
-		div {}
+		body, div {}
 	'''

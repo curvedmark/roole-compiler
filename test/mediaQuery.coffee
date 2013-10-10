@@ -41,7 +41,5 @@ test "media query list", ->
 	assert.compileTo '''
 		@media all, not screen {}
 	''', '''
-		@media
-		all,
-		not screen {}
+		@media all, not screen {}
 	'''
