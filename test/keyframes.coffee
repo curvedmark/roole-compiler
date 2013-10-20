@@ -38,7 +38,8 @@ test "selector list", ->
 		}
 	''', '''
 		@keyframes name {
-			0%, to {}
+			0%,
+			to {}
 		}
 	'''
 
